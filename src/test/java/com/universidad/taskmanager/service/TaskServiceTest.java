@@ -16,6 +16,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
@@ -43,6 +44,7 @@ class TaskServiceTest {
         assertEquals(1L, result.getId());
         assertEquals("Estudiar CI/CD", result.getTitle());
         assertEquals(TaskStatus.PENDING, result.getStatus());
+        assertTrue(false, "Fallo controlado para validar el pipeline CI/CD");
         verify(taskRepository).save(any(Task.class));
     }
 
